@@ -1,0 +1,40 @@
+
+test-string-operatorstest string operators°
+<
+/type.googleapis.com/google.protobuf.StringValue	
+default_
+env == "prod";
+/type.googleapis.com/google.protobuf.StringValue
+equals*
+
+envproda
+env != "dev"?
+/type.googleapis.com/google.protobuf.StringValue
+
+not equals*
+
+envdev]
+env co "test"9
+/type.googleapis.com/google.protobuf.StringValue
+test*
+
+envtest	f
+env sw "staging"<
+/type.googleapis.com/google.protobuf.StringValue	
+staging*
+
+env	staging]
+env ew "beta"9
+/type.googleapis.com/google.protobuf.StringValue
+beta*
+
+envbeta…
+env in ["special1","special2"]<
+/type.googleapis.com/google.protobuf.StringValue	
+special*%
+#
+env2
+
+special1
+
+special2 

@@ -1,0 +1,13 @@
+{
+  "key": "tunable-interface",
+  "description": "tunable interface",
+  "tree": {
+    "default": {
+      "booleanField": true,
+      "numberField": 42,
+      "stringField": "default",
+      "@type": "type.googleapis.com/examples.config.v1beta1.TunableStruct"
+    }
+  },
+  "type": "FEATURE_TYPE_PROTO"
+}

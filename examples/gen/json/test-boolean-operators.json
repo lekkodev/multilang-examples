@@ -1,0 +1,39 @@
+{
+  "key": "test-boolean-operators",
+  "description": "test boolean operators",
+  "tree": {
+    "default": {
+      "@type": "type.googleapis.com/google.protobuf.StringValue",
+      "value": "default"
+    },
+    "constraints": [
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "true"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "is_test",
+            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS",
+            "comparisonValue": true
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "false"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "is_test",
+            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS",
+            "comparisonValue": false
+          }
+        }
+      }
+    ]
+  },
+  "type": "FEATURE_TYPE_STRING"
+}

@@ -1,0 +1,11 @@
+{
+  "key": "number-tunable",
+  "description": "tunable number",
+  "tree": {
+    "default": {
+      "@type": "type.googleapis.com/google.protobuf.DoubleValue",
+      "value": 42
+    }
+  },
+  "type": "FEATURE_TYPE_FLOAT"
+}

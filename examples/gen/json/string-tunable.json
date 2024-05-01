@@ -1,0 +1,11 @@
+{
+  "key": "string-tunable",
+  "description": "tunable string",
+  "tree": {
+    "default": {
+      "@type": "type.googleapis.com/google.protobuf.StringValue",
+      "value": "foo"
+    }
+  },
+  "type": "FEATURE_TYPE_STRING"
+}

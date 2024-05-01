@@ -1,0 +1,94 @@
+{
+  "key": "test-string-operators",
+  "description": "test string operators",
+  "tree": {
+    "default": {
+      "@type": "type.googleapis.com/google.protobuf.StringValue",
+      "value": "default"
+    },
+    "constraints": [
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "equals"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": "prod",
+            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "not equals"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": "dev",
+            "comparisonOperator": "COMPARISON_OPERATOR_NOT_EQUALS"
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "test"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": "test",
+            "comparisonOperator": "COMPARISON_OPERATOR_CONTAINS"
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "staging"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": "staging",
+            "comparisonOperator": "COMPARISON_OPERATOR_STARTS_WITH"
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "beta"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": "beta",
+            "comparisonOperator": "COMPARISON_OPERATOR_ENDS_WITH"
+          }
+        }
+      },
+      {
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "special"
+        },
+        "ruleAstNew": {
+          "atom": {
+            "contextKey": "env",
+            "comparisonValue": [
+              "special1",
+              "special2"
+            ],
+            "comparisonOperator": "COMPARISON_OPERATOR_CONTAINED_WITHIN"
+          }
+        }
+      }
+    ]
+  },
+  "type": "FEATURE_TYPE_STRING"
+}
