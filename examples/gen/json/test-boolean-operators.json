@@ -8,28 +8,30 @@
     },
     "constraints": [
       {
+        "rule": "isTest == true",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "true"
         },
         "ruleAstNew": {
           "atom": {
-            "contextKey": "is_test",
-            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS",
-            "comparisonValue": true
+            "contextKey": "isTest",
+            "comparisonValue": true,
+            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
           }
         }
       },
       {
+        "rule": "isTest == false",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "false"
         },
         "ruleAstNew": {
           "atom": {
-            "contextKey": "is_test",
-            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS",
-            "comparisonValue": false
+            "contextKey": "isTest",
+            "comparisonValue": false,
+            "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
           }
         }
       }

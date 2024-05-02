@@ -5,7 +5,7 @@ import (
 	"context"
 
 	client "github.com/lekkodev/go-sdk/client"
-	configv1beta1 "github.com/lekkodev/test-multilang/lekko/proto/examples/config/v1beta1"
+	configv1beta1 "github.com/lekkodev/multilang-examples/golang/lekko/proto/examples/config/v1beta1"
 )
 
 type LekkoClient struct {
@@ -48,7 +48,7 @@ func (c *LekkoClient) GetStringTunable() string {
 // test boolean operators
 func (c *LekkoClient) GetTestBooleanOperators(isTest bool) string {
 	ctx := context.Background()
-	ctx = client.Add(ctx, "is_test", isTest)
+	ctx = client.Add(ctx, "isTest", isTest)
 	result, err := c.GetString(ctx, "examples", "test-boolean-operators")
 	if err == nil {
 		return result
@@ -79,13 +79,13 @@ func (c *LekkoClient) GetTestStringOperators(env string) string {
 }
 
 // tunable interface
-func (c *LekkoClient) GetTunableInterface() *configv1beta1.TunableStruct {
+func (c *LekkoClient) GetTunableInterface(env string) *configv1beta1.TunableStruct {
 	ctx := context.Background()
-
+	ctx = client.Add(ctx, "env", env)
 	result := &configv1beta1.TunableStruct{}
 	err := c.GetProto(ctx, "examples", "tunable-interface", result)
 	if err == nil {
 		return result
 	}
-	return getTunableInterface()
+	return getTunableInterface(env)
 }

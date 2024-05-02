@@ -3,7 +3,7 @@ package lekkoexamples
 import (
 	"strings"
 
-	configv1beta1 "github.com/lekkodev/test-multilang/lekko/proto/examples/config/v1beta1"
+	configv1beta1 "github.com/lekkodev/multilang-examples/golang/lekko/proto/examples/config/v1beta1"
 	"golang.org/x/exp/slices"
 )
 
@@ -24,9 +24,9 @@ func getStringTunable() string {
 
 // test boolean operators
 func getTestBooleanOperators(isTest bool) string {
-	if isTest == true {
+	if isTest {
 		return "true"
-	} else if isTest == false {
+	} else if !isTest {
 		return "false"
 	}
 	return "default"
@@ -71,7 +71,14 @@ func getTestStringOperators(env string) string {
 }
 
 // tunable interface
-func getTunableInterface() *configv1beta1.TunableStruct {
+func getTunableInterface(env string) *configv1beta1.TunableStruct {
+	if env == "test" {
+		return &configv1beta1.TunableStruct{
+			BooleanField: true,
+			NumberField:  3.14,
+			StringField:  "test",
+		}
+	}
 	return &configv1beta1.TunableStruct{
 		BooleanField: true,
 		NumberField:  42,

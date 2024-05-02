@@ -8,5 +8,12 @@ export(
             number_field = 42,
             boolean_field = True,
         ),
+        overrides = [
+            ("env == \"test\"", examples_config_v1beta1.TunableStruct(
+                string_field = "test",
+                number_field = 3.14,
+                boolean_field = True,
+            )),
+        ],
     ),
 )

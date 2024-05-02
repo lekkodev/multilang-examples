@@ -76,7 +76,14 @@ export function getTestStringOperators({ env }: { env: string }): string {
 }
 
 /** tunable interface */
-export function getTunableInterface(): TunableStruct {
+export function getTunableInterface({ env }: { env: string }): TunableStruct {
+  if (env === "test") {
+    return {
+      booleanField: true,
+      numberField: 3.14,
+      stringField: "test",
+    };
+  }
   return {
     booleanField: true,
     numberField: 42,

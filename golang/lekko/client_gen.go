@@ -7,7 +7,7 @@ import (
 	"os"
 
 	client "github.com/lekkodev/go-sdk/client"
-	lekkoexamples "github.com/lekkodev/test-multilang/lekko/examples"
+	lekkoexamples "github.com/lekkodev/multilang-examples/golang/lekko/examples"
 	"google.golang.org/protobuf/proto"
 )
 
