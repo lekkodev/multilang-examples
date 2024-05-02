@@ -8,6 +8,7 @@
     },
     "constraints": [
       {
+        "rule": "env == \"prod\"",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "equals"
@@ -21,6 +22,7 @@
         }
       },
       {
+        "rule": "env != \"dev\"",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "not equals"
@@ -34,6 +36,7 @@
         }
       },
       {
+        "rule": "env co \"test\"",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "test"
@@ -47,6 +50,7 @@
         }
       },
       {
+        "rule": "env sw \"staging\"",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "staging"
@@ -60,6 +64,7 @@
         }
       },
       {
+        "rule": "env ew \"beta\"",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "beta"
@@ -73,6 +78,7 @@
         }
       },
       {
+        "rule": "env in [\"special1\",\"special2\"]",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "special"

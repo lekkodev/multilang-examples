@@ -3,8 +3,8 @@ export(
         description = "test boolean operators",
         default = "default",
         overrides = [
-            ("isTest == true", "true"),
-            ("isTest == false", "false"),
+            ("is_test == true", "true"),
+            ("is_test == false", "false"),
         ],
     ),
 )

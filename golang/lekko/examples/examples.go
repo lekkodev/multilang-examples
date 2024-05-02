@@ -32,6 +32,21 @@ func getTestBooleanOperators(isTest bool) string {
 	return "default"
 }
 
+func getTestLogicalOperators(env string, isTest bool, version float64) string {
+	if env == "prod" && version == 1 {
+		return "and"
+	} else if env == "test" || version == 2 {
+		return "or"
+	} else if env == "prod" && (version == 1 || isTest) {
+		return "and or"
+	} else if env == "prod" || version == 1 && isTest {
+		return "or and"
+	} else if env == "prod" && !(version == 1 && isTest) {
+		return "and not"
+	}
+	return "default"
+}
+
 // test number operators
 func getTestNumberOperators(version float64) string {
 	if version == 1 {

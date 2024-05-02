@@ -8,6 +8,7 @@
     },
     "constraints": [
       {
+        "rule": "version == 1",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "equals"
@@ -21,6 +22,7 @@
         }
       },
       {
+        "rule": "version != 2",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "not equals"
@@ -34,6 +36,7 @@
         }
       },
       {
+        "rule": "version > 3",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "greater"
@@ -47,6 +50,7 @@
         }
       },
       {
+        "rule": "version >= 4",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "greater or equals"
@@ -60,6 +64,7 @@
         }
       },
       {
+        "rule": "version < 5",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "less"
@@ -73,6 +78,7 @@
         }
       },
       {
+        "rule": "version <= 6",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "less or equals"
@@ -86,6 +92,7 @@
         }
       },
       {
+        "rule": "version in [1,3,5]",
         "value": {
           "@type": "type.googleapis.com/google.protobuf.StringValue",
           "value": "in"

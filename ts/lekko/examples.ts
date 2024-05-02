@@ -33,6 +33,29 @@ export function getTestBooleanOperators({
   return "default";
 }
 
+export function getTestLogicalOperators({
+  env,
+  isTest,
+  version,
+}: {
+  env: string;
+  isTest: boolean;
+  version: number;
+}): string {
+  if (env === "prod" && version === 1) {
+    return "and";
+  } else if (env === "test" || version === 2) {
+    return "or";
+  } else if (env === "prod" && (version === 1 || isTest)) {
+    return "and or";
+  } else if (env === "prod" || (version === 1 && isTest)) {
+    return "or and";
+  } else if (env === "prod" && !(version === 1 && isTest)) {
+    return "and not";
+  }
+  return "default";
+}
+
 /** test number operators */
 export function getTestNumberOperators({
   version,

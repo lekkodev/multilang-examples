@@ -1,0 +1,196 @@
+{
+  "key": "test-logical-operators",
+  "tree": {
+    "default": {
+      "@type": "type.googleapis.com/google.protobuf.StringValue",
+      "value": "default"
+    },
+    "constraints": [
+      {
+        "rule": "env == \"prod\" and version == 1",
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "and"
+        },
+        "ruleAstNew": {
+          "logicalExpression": {
+            "rules": [
+              {
+                "atom": {
+                  "contextKey": "env",
+                  "comparisonValue": "prod",
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              },
+              {
+                "atom": {
+                  "contextKey": "version",
+                  "comparisonValue": 1,
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              }
+            ],
+            "logicalOperator": "LOGICAL_OPERATOR_AND"
+          }
+        }
+      },
+      {
+        "rule": "env == \"test\" or version == 2",
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "or"
+        },
+        "ruleAstNew": {
+          "logicalExpression": {
+            "rules": [
+              {
+                "atom": {
+                  "contextKey": "env",
+                  "comparisonValue": "test",
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              },
+              {
+                "atom": {
+                  "contextKey": "version",
+                  "comparisonValue": 2,
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              }
+            ],
+            "logicalOperator": "LOGICAL_OPERATOR_OR"
+          }
+        }
+      },
+      {
+        "rule": "env == \"prod\" and (version == 1 or is_test == true)",
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "and or"
+        },
+        "ruleAstNew": {
+          "logicalExpression": {
+            "rules": [
+              {
+                "atom": {
+                  "contextKey": "env",
+                  "comparisonValue": "prod",
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              },
+              {
+                "logicalExpression": {
+                  "rules": [
+                    {
+                      "atom": {
+                        "contextKey": "version",
+                        "comparisonValue": 1,
+                        "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                      }
+                    },
+                    {
+                      "atom": {
+                        "contextKey": "is_test",
+                        "comparisonValue": true,
+                        "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                      }
+                    }
+                  ],
+                  "logicalOperator": "LOGICAL_OPERATOR_OR"
+                }
+              }
+            ],
+            "logicalOperator": "LOGICAL_OPERATOR_AND"
+          }
+        }
+      },
+      {
+        "rule": "env == \"prod\" or (version == 1 and is_test == true)",
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "or and"
+        },
+        "ruleAstNew": {
+          "logicalExpression": {
+            "rules": [
+              {
+                "atom": {
+                  "contextKey": "env",
+                  "comparisonValue": "prod",
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              },
+              {
+                "logicalExpression": {
+                  "rules": [
+                    {
+                      "atom": {
+                        "contextKey": "version",
+                        "comparisonValue": 1,
+                        "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                      }
+                    },
+                    {
+                      "atom": {
+                        "contextKey": "is_test",
+                        "comparisonValue": true,
+                        "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                      }
+                    }
+                  ],
+                  "logicalOperator": "LOGICAL_OPERATOR_AND"
+                }
+              }
+            ],
+            "logicalOperator": "LOGICAL_OPERATOR_OR"
+          }
+        }
+      },
+      {
+        "rule": "env == \"prod\" and not(version == 1 and is_test == true)",
+        "value": {
+          "@type": "type.googleapis.com/google.protobuf.StringValue",
+          "value": "and not"
+        },
+        "ruleAstNew": {
+          "logicalExpression": {
+            "rules": [
+              {
+                "atom": {
+                  "contextKey": "env",
+                  "comparisonValue": "prod",
+                  "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                }
+              },
+              {
+                "not": {
+                  "logicalExpression": {
+                    "rules": [
+                      {
+                        "atom": {
+                          "contextKey": "version",
+                          "comparisonValue": 1,
+                          "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                        }
+                      },
+                      {
+                        "atom": {
+                          "contextKey": "is_test",
+                          "comparisonValue": true,
+                          "comparisonOperator": "COMPARISON_OPERATOR_EQUALS"
+                        }
+                      }
+                    ],
+                    "logicalOperator": "LOGICAL_OPERATOR_AND"
+                  }
+                }
+              }
+            ],
+            "logicalOperator": "LOGICAL_OPERATOR_AND"
+          }
+        }
+      }
+    ]
+  },
+  "type": "FEATURE_TYPE_STRING"
+}

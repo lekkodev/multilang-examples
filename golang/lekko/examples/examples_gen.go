@@ -48,12 +48,24 @@ func (c *LekkoClient) GetStringTunable() string {
 // test boolean operators
 func (c *LekkoClient) GetTestBooleanOperators(isTest bool) string {
 	ctx := context.Background()
-	ctx = client.Add(ctx, "isTest", isTest)
+	ctx = client.Add(ctx, "is_test", isTest)
 	result, err := c.GetString(ctx, "examples", "test-boolean-operators")
 	if err == nil {
 		return result
 	}
 	return getTestBooleanOperators(isTest)
+}
+
+func (c *LekkoClient) GetTestLogicalOperators(env string, isTest bool, version float64) string {
+	ctx := context.Background()
+	ctx = client.Add(ctx, "env", env)
+	ctx = client.Add(ctx, "is_test", isTest)
+	ctx = client.Add(ctx, "version", version)
+	result, err := c.GetString(ctx, "examples", "test-logical-operators")
+	if err == nil {
+		return result
+	}
+	return getTestLogicalOperators(env, isTest, version)
 }
 
 // test number operators
