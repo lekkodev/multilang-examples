@@ -2,5 +2,5 @@
 
 Supported languages:
 
-- [TypeScript](ts/)
-- [Go](golang/)
+- [TypeScript](ts/lekko/examples.ts)
+- [Go](golang/lekko/examples/examples.go)
