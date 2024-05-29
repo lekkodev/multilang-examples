@@ -12,5 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "@lekko/ts-transformer": "*"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "@lekko/eslint-plugin": "/Users/jonathan/src/ts-tools/packages/plugins/eslint",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0"
   }
 }

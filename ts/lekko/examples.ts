@@ -42,7 +42,7 @@ export function getTestLogicalOperators({
   isTest: boolean;
   version: number;
 }): string {
-  if (env === "prod" && version === 1) {
+  if (env === "prod" && version === 1 && "dev" === env) {
     return "and";
   } else if (env === "test" || version === 2) {
     return "or";
